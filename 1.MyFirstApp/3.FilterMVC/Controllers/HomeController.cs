@@ -8,18 +8,26 @@ namespace _3.FilterMVC.Controllers
 {
     public class HomeController : Controller
     {
-        [Authorize]
+        //[Authorize]
         // GET: Home
         public string Index()
         {
             return "Home Controller";
         }
 
-        [Authorize (Roles = "admin")]
-        [OutputCache (Duration =10)]
+        //[Authorize (Roles = "admin")]
+        //[OutputCache (Duration =10)]
+        [ActionName ("Hour")]
         public string CurrentTime()
         {
             return DateTime.Now.ToString("T");
         }
+
+        [NonAction]
+        public string DateTimeString()
+        {
+            return "It's " + DateTime.Now.ToString("T");
+        }
+
     }
 }

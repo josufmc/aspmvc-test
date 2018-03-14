@@ -9,10 +9,30 @@ namespace _6.MyModelMVC.Controllers
 {
     public class ClientController : Controller
     {
+        private EmpDBContext db = new EmpDBContext();
+
+        public static List<Client> clientList = new List<Client>() {
+            new Client
+            {
+                Id = 1,
+                Name = "Ángel",
+                CreatedOn = new DateTime(),
+                Age = 30
+            },
+            new Client
+            {
+                Id = 2,
+                Name = "Patricia",
+                CreatedOn = new DateTime(),
+                Age = 35
+            },
+        };
+
         // GET: Client
         public ActionResult Index()
         {
-            var clients = from e in AllClients() orderby e.Id select e;
+            //var clients = from e in clientList orderby e.Id select e;
+            var clients = from e in db.Clients orderby e.Id select e;
             return View(clients);
         }
 
@@ -30,12 +50,13 @@ namespace _6.MyModelMVC.Controllers
 
         // POST: Client/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Client client)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                // clientList.Add(client);
+                db.Clients.Add(client);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
@@ -43,11 +64,36 @@ namespace _6.MyModelMVC.Controllers
                 return View();
             }
         }
+        /*
+        public ActionResult Create(FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add insert logic here
+                Client client = new Client();
+                client.Name = collection["name"];
+                DateTime jDate;
+                DateTime.TryParse(collection["DOB"], out jDate);
+                client.CreatedOn = jDate;
+                string age = collection["age"];
+                client.Age = Int32.Parse(age);
+                clientList.Add(client);
+                client.Name = collection["name"];
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }*/
 
         // GET: Client/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            // List<Client> clientList = AllClients();
+            // var client = clientList.Single(m => m.Id == id);
+            var client = db.Clients.Single(m => m.Id == id);
+            return View(client);
         }
 
         // POST: Client/Edit/5
@@ -56,9 +102,14 @@ namespace _6.MyModelMVC.Controllers
         {
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                // var client = clientList.Single(m => m.Id == id);
+                var client = db.Clients.Single(m => m.Id == id);
+                if (TryUpdateModel(client))
+                {
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                return View(client);
             }
             catch
             {

@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace _6.MyModelMVC.Models
 {
     public class Client
     {
         public int Id { get; set; }
+
+        [StringLength(60, MinimumLength =3)]
         public string Name { get; set; }
+        [Display(Name= "Created on")]
+        [DataType (DataType.Date)]
+        [DisplayFormat (DataFormatString = "{0:YYYY-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime CreatedOn { get; set; }
+        [Range(18,75)]
         public int Age { get; set; }
     }
 

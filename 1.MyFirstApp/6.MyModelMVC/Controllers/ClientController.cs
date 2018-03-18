@@ -29,6 +29,7 @@ namespace _6.MyModelMVC.Controllers
         };
 
         // GET: Client
+        [OutputCache (Duration = 60)]
         public ActionResult Index()
         {
             //var clients = from e in clientList orderby e.Id select e;
@@ -37,9 +38,12 @@ namespace _6.MyModelMVC.Controllers
         }
 
         // GET: Client/Details/5
+        //[OutputCache(Duration = int.MaxValue, VaryByParam = "id")]
+        [OutputCache(CacheProfile = "Cache5Minutes")]
         public ActionResult Details(int id)
         {
-            return View();
+            var client = db.Clients.SingleOrDefault(e => e.Id == id);
+            return View(client);
         }
 
         // GET: Client/Create

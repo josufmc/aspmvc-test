@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8.MyScaffoldingMVC", "8.MyS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9.MyWebApiMVC", "9.MyWebApiMVC\9.MyWebApiMVC.csproj", "{740B68B0-D848-486B-8D8F-97B64A72C799}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.RegisterMVC", "10.RegisterMVC\10.RegisterMVC.csproj", "{5DC468B1-A3E0-4182-B991-33351CEFCC90}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{740B68B0-D848-486B-8D8F-97B64A72C799}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{740B68B0-D848-486B-8D8F-97B64A72C799}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{740B68B0-D848-486B-8D8F-97B64A72C799}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DC468B1-A3E0-4182-B991-33351CEFCC90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DC468B1-A3E0-4182-B991-33351CEFCC90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DC468B1-A3E0-4182-B991-33351CEFCC90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DC468B1-A3E0-4182-B991-33351CEFCC90}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

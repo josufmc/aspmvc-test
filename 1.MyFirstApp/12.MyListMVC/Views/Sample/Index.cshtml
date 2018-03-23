@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<h2>Index</h2>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script>
+        $(document).ready(function () {
+            $("#Province").prop("disabled", true);
+            $("#Countries").change(function () {
+                if ($("#Countries").val() != "Choose") {
+                    var OpcionesPais = {};
+                    OpcionesPais.url = "/Sample/Provinces";
+                    OpcionesPais.type = "POST";
+                    OpcionesPais.data = JSON.stringify({ country: $("#Countries").val() });
+                    OpcionesPais.datatype = "json";
+                    OpcionesPais.contentType = "application/json";
+                    OpcionesPais.success = function (Provinces) {
+                        $("#Province").empty();
+                        for (var i = 0; i < Provinces.length; i++) {
+                            $("#Province").append("<option>" + Provinces[i] + "</option>");
+                        }
+                        $("#Province").prop("disabled", false);
+                    };
+                    OpcionesPais.error = function () { alert("Error obtaining Provinces"); };
+                    $.ajax(OpcionesPais);
+                }
+                else {
+                    $("#Province").empty();
+                    $("#Province").prop("disabled", true);
+                }
+            });
+        });
+</script>
+@using (Html.BeginForm("Index", "Pais", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <h4>Select Country and Province</h4>
+    <hr />
+    @Html.ValidationSummary()
+    <div class="form-group">
+        @Html.Label("Countries:", new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownList("Countries", ViewData["countries"] as SelectList, new { @class = "form-control" })
+        </div>
+    </div><br />
+    <div class="form-group">
+        @Html.Label("Province:", new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            <select id="Province" class="form-control"></select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Send" />
+        </div>
+    </div>
+}

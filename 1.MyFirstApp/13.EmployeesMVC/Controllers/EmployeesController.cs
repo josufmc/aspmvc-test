@@ -46,7 +46,7 @@ namespace _13.EmployeesMVC.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Antiquity,Age")] Employee employee)
+        public ActionResult Create([Bind(Include = "Id,Name,Antiquity,Age,Category")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace _13.EmployeesMVC.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Antiquity,Age")] Employee employee)
+        public ActionResult Edit([Bind(Include = "Id,Name,Antiquity,Age,Category")] Employee employee)
         {
             if (ModelState.IsValid)
             {

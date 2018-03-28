@@ -6,9 +6,19 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<div>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+    @using (Html.BeginForm("Index", "Employees", FormMethod.Get))
+    {
+        <p>Name: @Html.TextBox("search")</p>
+        <p>Name: @Html.DropDownList("categoryList", "All")</p>
+        <input type="submit" value="Search" />
+    }
+</div>
+
 <table class="table">
     <tr>
         <th>

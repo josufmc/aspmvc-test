@@ -15,9 +15,25 @@ namespace _13.EmployeesMVC.Controllers
         private EmployeeDBContext db = new EmployeeDBContext();
 
         // GET: Employees
-        public ActionResult Index()
+        public ActionResult Index(string categoryList, string search)
         {
-            return View(db.Employees.ToList());
+            var categoryL = new List<string>();
+            var categoryQuery = from cq in db.Employees orderby cq.Category select cq.Category;
+            categoryL.AddRange(categoryQuery.Distinct());
+            ViewBag.categoryList = new SelectList(categoryL);
+            var employees = from e in db.Employees select e;
+
+            if (!String.IsNullOrEmpty(search))
+            {
+                employees = employees.Where(e => e.Name.Contains(search));
+            }
+
+            if (!String.IsNullOrEmpty(categoryList))
+            {
+                employees = employees.Where(e => e.Category.Equals(categoryList));
+            }
+
+            return View(employees);
         }
 
         // GET: Employees/Details/5

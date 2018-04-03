@@ -204,6 +204,10 @@
     <Compile Include="Migrations\201803270442567_Category.Designer.cs">
       <DependentUpon>201803270442567_Category.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804030452087_Dataannotations.cs" />
+    <Compile Include="Migrations\201804030452087_Dataannotations.Designer.cs">
+      <DependentUpon>201804030452087_Dataannotations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -297,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803270442567_Category.resx">
       <DependentUpon>201803270442567_Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804030452087_Dataannotations.resx">
+      <DependentUpon>201804030452087_Dataannotations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

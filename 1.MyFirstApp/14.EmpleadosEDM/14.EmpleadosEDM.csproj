@@ -150,6 +150,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EmpleadosController.cs" />
+    <Compile Include="Controllers\Empleados_Antiguedad_EstadisticasController.cs" />
+    <Compile Include="Controllers\Empleado_DetallesController.cs" />
+    <Compile Include="Controllers\Empleado_Experiencia_EstadisticasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -241,6 +245,26 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Empleados\Create.cshtml" />
+    <Content Include="Views\Empleados\Delete.cshtml" />
+    <Content Include="Views\Empleados\Details.cshtml" />
+    <Content Include="Views\Empleados\Edit.cshtml" />
+    <Content Include="Views\Empleados\Index.cshtml" />
+    <Content Include="Views\Empleado_Detalles\Create.cshtml" />
+    <Content Include="Views\Empleado_Detalles\Delete.cshtml" />
+    <Content Include="Views\Empleado_Detalles\Details.cshtml" />
+    <Content Include="Views\Empleado_Detalles\Edit.cshtml" />
+    <Content Include="Views\Empleado_Detalles\Index.cshtml" />
+    <Content Include="Views\Empleado_Experiencia_Estadisticas\Create.cshtml" />
+    <Content Include="Views\Empleado_Experiencia_Estadisticas\Delete.cshtml" />
+    <Content Include="Views\Empleado_Experiencia_Estadisticas\Details.cshtml" />
+    <Content Include="Views\Empleado_Experiencia_Estadisticas\Edit.cshtml" />
+    <Content Include="Views\Empleado_Experiencia_Estadisticas\Index.cshtml" />
+    <Content Include="Views\Empleados_Antiguedad_Estadisticas\Create.cshtml" />
+    <Content Include="Views\Empleados_Antiguedad_Estadisticas\Delete.cshtml" />
+    <Content Include="Views\Empleados_Antiguedad_Estadisticas\Details.cshtml" />
+    <Content Include="Views\Empleados_Antiguedad_Estadisticas\Edit.cshtml" />
+    <Content Include="Views\Empleados_Antiguedad_Estadisticas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

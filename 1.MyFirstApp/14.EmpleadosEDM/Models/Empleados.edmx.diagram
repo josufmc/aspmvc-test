@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="a95c17238e2444c793c811f211e11ce2" Name="Diagram1" ZoomLevel="81">
-        <EntityTypeShape EntityType="EmployeesEDMModel.Empleado_Detalles" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeesEDMModel.Empleado_Detalles" Width="2.5" PointX="3" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="EmployeesEDMModel.Empleado_Experiencia_Estadisticas" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="EmployeesEDMModel.Empleado" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="EmployeesEDMModel.Empleados_Antiguedad_Estadisticas" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />

@@ -15,6 +15,9 @@
             @Html.DisplayNameFor(model => model.Categoria)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Subcategoria)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.ANTIGUEDAD_Pluses)
         </th>
         <th>
@@ -35,6 +38,9 @@
             @Html.DisplayFor(modelItem => item.Categoria)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Subcategoria)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.ANTIGUEDAD_Pluses)
         </td>
         <td>
@@ -47,9 +53,9 @@
             @Html.DisplayFor(modelItem => item.Empleado.Nombre)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Detalles_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Detalles_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Detalles_ID })
+            @Html.ActionLink("Edit", "Edit", new { id = item.Detalles_ID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Detalles_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Detalles_ID })
         </td>
     </tr>
 }

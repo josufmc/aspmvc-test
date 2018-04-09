@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EmployeesEDMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="EmployeesEDMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Empleado_Detalles">
           <Key>
             <PropertyRef Name="Detalles_ID" />
@@ -15,6 +15,7 @@
           <Property Name="ANTIGUEDAD_Pluses" Type="int" />
           <Property Name="Experiencia_Anios" Type="int" />
           <Property Name="Salario" Type="int" />
+          <Property Name="Subcategoria" Type="varchar" MaxLength="5" />
         </EntityType>
         <EntityType Name="Empleado_Experiencia_Estadisticas">
           <Key>
@@ -99,8 +100,7 @@
             <End Role="Empleados_Antiguedad_Estadisticas" EntitySet="Empleados_Antiguedad_Estadisticas" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EmployeesEDMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -115,6 +115,7 @@
           <Property Name="Experiencia_Anios" Type="Int32" />
           <Property Name="Salario" Type="Int32" />
           <NavigationProperty Name="Empleado" Relationship="Self.FK__Empleado___Emple__2B3F6F97" FromRole="Empleado_Detalles" ToRole="Empleados" />
+          <Property Name="Subcategoria" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Empleado_Experiencia_Estadisticas">
           <Key>
@@ -213,6 +214,7 @@
           <EntitySetMapping Name="Empleado_Detalles">
             <EntityTypeMapping TypeName="EmployeesEDMModel.Empleado_Detalles">
               <MappingFragment StoreEntitySet="Empleado_Detalles">
+                <ScalarProperty Name="Subcategoria" ColumnName="Subcategoria" />
                 <ScalarProperty Name="Detalles_ID" ColumnName="Detalles_ID" />
                 <ScalarProperty Name="Empleado_ID" ColumnName="Empleado_ID" />
                 <ScalarProperty Name="Categoria" ColumnName="Categoria" />
